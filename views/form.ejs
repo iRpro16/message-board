@@ -1,14 +1,25 @@
 <html>
     <head>
         <title>Form</title>
+        <link rel="stylesheet" href="/form.css">
     </head>
     <body>
-        <h2><%= header %></h2>
-        <%- include('navbar', {links: links}) %>
-        <form method="POST" action="/new">
-            <input name="username" placeholder="name"/>
-            <input name="message" placeholder="message"/>
-            <button type="submit">submit</button>
-        </form>
+        <div class="form-cont">
+            <div>
+                <h2><%= header %></h2>
+                <%- include('navbar', {links: links}) %>
+            </div>
+            <form method="POST" action="/new">
+                <div>
+                    <label for="username">Name:</label>
+                    <input name="username" placeholder="name"/>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <input name="message" placeholder="message"/>
+                </div>
+                <button type="submit">submit</button>
+            </form>
+        </div>
     </body>
 </html>

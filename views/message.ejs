@@ -1,6 +1,15 @@
-<div>
-    <h1>Post from <%=message.user %></h1>
-    <p> <%= message.text %></p>
-    <p><strong>Posted:</strong></p>
-    <%= message.added %>
-</div>
+<html>
+    <head>
+        <title><%=message.user %></title>
+        <link rel="stylesheet" href="/message.css">
+    </head>
+    <body>
+        <div class="posted-message">
+            <h1>Post from <%=message.user %></h1>
+            <p> <%= message.text %></p>
+            <p><strong>Posted:</strong></p>
+            <%= message.added %>
+        </div>
+
+    </body>
+</html>
