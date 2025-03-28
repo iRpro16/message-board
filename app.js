@@ -2,6 +2,7 @@ const express = require("express");
 const app  = express();
 const path = require("node:path");
 const indexRouter = require("./routers/indexRouter");
+const newRouter = require("./routers/newRouter");
 const assetsPath = path.join(__dirname, "public");
 
 // setup
@@ -12,6 +13,7 @@ app.use(express.static(assetsPath));
 
 
 app.use("/", indexRouter);
+app.use("/new", newRouter);
 
 const PORT = 3000;
 app.listen(PORT, () => {
