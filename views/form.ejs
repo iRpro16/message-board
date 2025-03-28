@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Form</title>
+    </head>
+    <body>
+        <h2><%= header %></h2>
+        <%- include('navbar', {links: links}) %>
+        <form method="POST" action="/new">
+            <input name="username" placeholder="name"/>
+            <input name="message" placeholder="message"/>
+            <button type="submit">submit</button>
+        </form>
+    </body>
+</html>
