@@ -1,5 +1,4 @@
 const { Router } = require("express");
-const { messages, links} = require('../data/messages');
 const newRouter = Router();
 
 newRouter.get("/", (req, res) => {

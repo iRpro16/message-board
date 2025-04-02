@@ -1,10 +1,8 @@
 const { Router } = require("express");
 const indexRouter = Router();
-const { messages, links} = require('../data/messages');
+const messageController = require("../controllers/messageController");
 
-indexRouter.get("/", (req, res) => {
-    res.render("index", { title: "Mini Message Board", messages: messages, links: links});
-});
+indexRouter.get("/", messageController.getMessages);
 indexRouter.get("/display/:username", (req, res) => {
     const { username } = req.params;
     const message = messages.find(message => message.user === username);
