@@ -14,6 +14,28 @@ async function getMessages(req, res) {
     })
 }
 
+async function displayUserGet(req, res) {
+    const messages = await db.getAllMessages();
+    const { username } = req.params;
+    const message = messages.find(message => message.username === username);
+    res.render("message", { message: message });
+}
+
+async function displayFormGet(req, res) {
+    res.render("form", {
+        header: "Post Message",
+        links: links
+    })
+}
+
+async function displayFormPost(req, res) {
+    await db.insertUser(req.body.username, req.body.message, new Date());
+    res.redirect("/");
+}
+
 module.exports = {
-    getMessages
+    getMessages,
+    displayUserGet,
+    displayFormGet,
+    displayFormPost
 }

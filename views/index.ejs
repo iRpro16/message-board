@@ -11,10 +11,10 @@
             </div>
             <ul class="list">
                 <% messages.forEach((message) => { %>
-                    <li class="message"><%= message.user %>, 
+                    <li class="message"><%= message.username %>, 
                         <%= message.text %>, 
                         <%= message.added %>
-                        <a href="display/<%= message.user %>">open</a>
+                        <a href="display/<%= message.username %>">open</a>
                     </li>
                 <% }) %>
             </ul>
